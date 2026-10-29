@@ -1,0 +1,87 @@
+### MJ MASALA API — runnable requests (IntelliJ / VS Code REST Client)
+@host = http://localhost:8080/api
+@token = PASTE_ACCESS_TOKEN_HERE
+
+### Catalogue (public)
+GET {{host}}/products?size=5&sort=popular
+
+### Filtered shop query — mirrors the frontend filter panel
+GET {{host}}/products?category=masala&maxPrice=300&minRating=4.5&sort=price-asc
+
+### One product with its pack ladder
+GET {{host}}/products/turmeric-powder
+
+### Combos
+GET {{host}}/combos
+
+### Reviews + rating summary
+GET {{host}}/products/1/reviews?sort=helpful&size=5
+
+### Coupon preview
+POST {{host}}/coupons/validate
+Content-Type: application/json
+
+{ "code": "MJ10", "subtotal": 1714 }
+
+### Pincode check
+GET {{host}}/shipping/pincode/122001
+
+### Register (returns the token pair)
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{ "name": "Anil Dagar", "email": "anil@example.com", "phone": "9811122233", "password": "supersecret1" }
+
+### Login
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "email": "anil@example.com", "password": "supersecret1" }
+
+### Current account
+GET {{host}}/auth/me
+Authorization: Bearer {{token}}
+
+### Add to cart
+POST {{host}}/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "itemType": "PRODUCT", "packId": 3, "quantity": 2 }
+
+### Cart
+GET {{host}}/cart
+Authorization: Bearer {{token}}
+
+### Place an order — note the server prices it, the body names SKUs only
+POST {{host}}/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "contactName": "Anil Dagar",
+  "contactPhone": "9811122233",
+  "contactEmail": "anil@example.com",
+  "shipLine": "12 MG Road, Sector 14",
+  "shipCity": "Gurugram",
+  "shipState": "Haryana",
+  "shipPin": "122001",
+  "paymentMethod": "COD",
+  "couponCode": "MJ10",
+  "items": [ { "itemType": "PRODUCT", "packId": 3, "quantity": 2 } ]
+}
+
+### My orders
+GET {{host}}/orders/mine
+Authorization: Bearer {{token}}
+
+### Write a review
+POST {{host}}/products/1/reviews
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "rating": 5, "title": "Excellent", "body": "Deep gold colour and a strong aroma.", "city": "Gurugram" }
+
+### Admin dashboard (needs an admin token)
+GET {{host}}/admin/stats
+Authorization: Bearer {{token}}

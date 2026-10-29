@@ -1,0 +1,338 @@
+-- =====================================================================
+-- MJ MASALA — MySQL / MariaDB schema
+--
+-- Mirrors the PostgreSQL migration. Two differences are forced by the engine:
+--   * ids use AUTO_INCREMENT instead of an identity clause;
+--   * java.time.Instant maps to DATETIME(6) here rather than TIMESTAMPTZ.
+-- Hibernate 6 renders BOOLEAN as BIT on MySQL, so the flags are declared BIT to keep
+-- ddl-auto=validate happy.
+--
+-- Hibernate runs with ddl-auto=validate, so this file is the single source of
+-- truth for the schema and any drift fails the application at startup.
+-- =====================================================================
+
+-- ------------------------------------------------------------------ accounts
+create table app_user (
+    id            bigint not null auto_increment primary key,
+    created_at    datetime(6)  not null,
+    updated_at    datetime(6)  not null,
+    name          varchar(120) not null,
+    email         varchar(190) not null,
+    phone         varchar(20),
+    password_hash varchar(100) not null,
+    -- set on every password change; refresh tokens older than this are refused, so a
+    -- reset actually ends the sessions that existed before it
+    password_changed_at datetime(6),
+    role enum ('ADMIN','USER') not null,
+    enabled       bit      not null,
+    -- bumped on every password change; a token carrying an older value is refused
+    token_version integer  not null,
+    constraint uk_user_email unique (email),
+    -- the number is a reset identifier as well as a contact, so it has to be unique
+    constraint uk_user_phone unique (phone)
+);
+
+create table address (
+    id            bigint not null auto_increment primary key,
+    created_at    datetime(6)  not null,
+    updated_at    datetime(6)  not null,
+    user_id       bigint       not null references app_user (id) on delete cascade,
+    label         varchar(40),
+    address_line  varchar(400) not null,
+    city          varchar(80)  not null,
+    state         varchar(80)  not null,
+    pin           varchar(10)  not null,
+    phone         varchar(20),
+    is_default    bit      not null
+);
+create index ix_address_user on address (user_id);
+
+-- ----------------------------------------------------------------- catalogue
+create table category (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6) not null,
+    updated_at datetime(6) not null,
+    slug       varchar(60) not null,
+    name       varchar(80) not null,
+    sort_order integer     not null,
+    active     bit     not null,
+    constraint uk_category_slug unique (slug)
+);
+
+create table product (
+    id           bigint not null auto_increment primary key,
+    created_at   datetime(6)   not null,
+    updated_at   datetime(6)   not null,
+    slug         varchar(80)   not null,
+    name         varchar(120)  not null,
+    hindi        varchar(120),
+    kind enum ('BLEND','MASALA','POWDER','WHOLE') not null,
+    category_id  bigint        not null references category (id),
+    origin       varchar(120),
+    blurb        varchar(400),
+    description  text,
+    ingredients  text,
+    usage_notes  text,
+    shelf_life   varchar(120),
+    spice_rgb    varchar(12),
+    lid          varchar(12),
+    image_key    varchar(60),
+    -- an uploaded photograph; null falls back to the bundled image for the SKU
+    image_file   varchar(200),
+    -- derived: refreshed from the pack ladder and the reviews, never edited by hand
+    rating_avg   decimal(3,1)  not null,
+    min_price    decimal(10,2) not null,
+    off_pct      integer       not null,
+    review_count integer       not null,
+    bestseller   bit       not null,
+    active       bit       not null,
+    sort_order   integer       not null,
+    constraint uk_product_slug unique (slug)
+);
+create index ix_product_category on product (category_id);
+-- the shop sorts on these three
+create index ix_product_min_price on product (min_price);
+create index ix_product_rating on product (rating_avg);
+create index ix_product_active on product (active);
+
+create table product_pack (
+    id           bigint not null auto_increment primary key,
+    created_at   datetime(6)   not null,
+    updated_at   datetime(6)   not null,
+    product_id   bigint        not null references product (id) on delete cascade,
+    pack_label   varchar(30)   not null,
+    weight_grams integer       not null,
+    price        decimal(10,2) not null,
+    mrp          decimal(10,2) not null,
+    sku          varchar(40)   not null,
+    active       bit       not null,
+    sort_order   integer       not null,
+    constraint uk_pack_sku unique (sku)
+);
+create index ix_pack_product on product_pack (product_id);
+
+create table product_spec (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6)  not null,
+    updated_at datetime(6)  not null,
+    product_id bigint       not null references product (id) on delete cascade,
+    spec_label varchar(80)  not null,
+    spec_value varchar(200) not null,
+    sort_order integer      not null
+);
+create index ix_spec_product on product_spec (product_id);
+
+create table product_badge (
+    product_id bigint      not null references product (id) on delete cascade,
+    badge      varchar(60)
+);
+create index ix_badge_product on product_badge (product_id);
+
+create table combo (
+    id           bigint not null auto_increment primary key,
+    created_at   datetime(6)   not null,
+    updated_at   datetime(6)   not null,
+    slug         varchar(80)   not null,
+    name         varchar(120)  not null,
+    hindi        varchar(120),
+    blurb        varchar(400),
+    description  text,
+    image_key    varchar(60),
+    -- an uploaded photograph; null falls back to the bundled image for the SKU
+    image_file   varchar(200),
+    price        decimal(10,2) not null,
+    mrp          decimal(10,2) not null,
+    bestseller   bit       not null,
+    active       bit       not null,
+    sort_order   integer       not null,
+    rating_avg   decimal(3,1)  not null,
+    review_count integer       not null,
+    constraint uk_combo_slug unique (slug)
+);
+
+create table combo_item (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6) not null,
+    updated_at datetime(6) not null,
+    combo_id   bigint      not null references combo (id) on delete cascade,
+    product_id bigint      not null references product (id),
+    pack_label varchar(30) not null,
+    quantity   integer     not null,
+    sort_order integer     not null
+);
+create index ix_comboitem_combo on combo_item (combo_id);
+
+create table combo_spec (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6)  not null,
+    updated_at datetime(6)  not null,
+    combo_id   bigint       not null references combo (id) on delete cascade,
+    spec_label varchar(80)  not null,
+    spec_value varchar(200) not null,
+    sort_order integer      not null
+);
+create index ix_combospec_combo on combo_spec (combo_id);
+
+create table combo_badge (
+    combo_id bigint      not null references combo (id) on delete cascade,
+    badge    varchar(60)
+);
+create index ix_combobadge_combo on combo_badge (combo_id);
+
+-- ------------------------------------------------------------------ reviews
+create table review (
+    id            bigint not null auto_increment primary key,
+    created_at    datetime(6)  not null,
+    updated_at    datetime(6)  not null,
+    product_id    bigint       not null references product (id) on delete cascade,
+    user_id       bigint       references app_user (id) on delete set null,
+    author_name   varchar(120) not null,
+    city          varchar(80),
+    rating        integer      not null,
+    title         varchar(160),
+    body          text,
+    verified      bit      not null,
+    helpful_count integer      not null,
+    photo_url     varchar(500),
+    approved      bit      not null
+);
+create index ix_review_product on review (product_id, approved);
+
+create table review_helpful (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6) not null,
+    updated_at datetime(6) not null,
+    review_id  bigint      not null references review (id) on delete cascade,
+    user_id    bigint      not null references app_user (id) on delete cascade,
+    constraint uk_helpful_review_user unique (review_id, user_id)
+);
+
+-- ------------------------------------------------------------------ coupons
+create table coupon (
+    id            bigint not null auto_increment primary key,
+    created_at    datetime(6)   not null,
+    updated_at    datetime(6)   not null,
+    code          varchar(40)   not null,
+    type enum ('FLAT','PERCENT') not null,
+    coupon_value  decimal(10,2) not null,
+    min_subtotal  decimal(10,2) not null,
+    max_discount  decimal(10,2),
+    active        bit       not null,
+    expires_at    datetime(6),
+    usage_limit   integer,
+    used_count    integer       not null,
+    description   varchar(160),
+    constraint uk_coupon_code unique (code)
+);
+
+-- ------------------------------------------------------- cart and wishlist
+create table cart_item (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6) not null,
+    updated_at datetime(6) not null,
+    user_id    bigint      not null references app_user (id) on delete cascade,
+    item_type enum ('COMBO','PRODUCT') not null,
+    product_id bigint      references product (id),
+    pack_id    bigint      references product_pack (id),
+    combo_id   bigint      references combo (id),
+    quantity   integer     not null
+);
+create index ix_cart_user on cart_item (user_id);
+
+create table wishlist_item (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6) not null,
+    updated_at datetime(6) not null,
+    user_id    bigint      not null references app_user (id) on delete cascade,
+    item_type enum ('COMBO','PRODUCT') not null,
+    product_id bigint      references product (id),
+    combo_id   bigint      references combo (id)
+);
+create index ix_wishlist_user on wishlist_item (user_id);
+
+-- ------------------------------------------------------------------- orders
+create table orders (
+    id             bigint not null auto_increment primary key,
+    created_at     datetime(6)   not null,
+    updated_at     datetime(6)   not null,
+    reference      varchar(40)   not null,
+    user_id        bigint        references app_user (id) on delete set null,
+    status enum ('CANCELLED','CONFIRMED','DELIVERED','PACKED','PLACED','SHIPPED') not null,
+    payment_method enum ('CARD','COD','NETBANKING','UPI') not null,
+    payment_status enum ('FAILED','PAID','PENDING','REFUNDED') not null,
+    -- delivery details are copied, not referenced, so editing an address later
+    -- cannot rewrite where an order was actually sent
+    contact_name   varchar(120)  not null,
+    contact_phone  varchar(20)   not null,
+    contact_email  varchar(190)  not null,
+    ship_line      varchar(400)  not null,
+    ship_city      varchar(80)   not null,
+    ship_state     varchar(80)   not null,
+    ship_pin       varchar(10)   not null,
+    subtotal       decimal(10,2) not null,
+    discount       decimal(10,2) not null,
+    shipping_fee   decimal(10,2) not null,
+    cod_fee        decimal(10,2) not null,
+    total          decimal(10,2) not null,
+    coupon_code    varchar(40),
+    notes          text,
+    placed_at      datetime(6)   not null,
+    constraint uk_order_reference unique (reference)
+);
+create index ix_order_user on orders (user_id);
+create index ix_order_status on orders (status);
+create index ix_order_placed on orders (placed_at);
+
+create table order_item (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6)   not null,
+    updated_at datetime(6)   not null,
+    order_id   bigint        not null references orders (id) on delete cascade,
+    item_type enum ('COMBO','PRODUCT') not null,
+    product_id bigint        references product (id),
+    combo_id   bigint        references combo (id),
+    -- name and price frozen at purchase time
+    item_name  varchar(140)  not null,
+    pack_label varchar(40),
+    unit_price decimal(10,2) not null,
+    quantity   integer       not null,
+    line_total decimal(10,2) not null
+);
+create index ix_orderitem_order on order_item (order_id);
+
+-- ---------------------------------------------------------------- enquiries
+create table enquiry (
+    id             bigint not null auto_increment primary key,
+    created_at     datetime(6)  not null,
+    updated_at     datetime(6)  not null,
+    kind enum ('CONTACT','WHOLESALE') not null,
+    status enum ('CLOSED','IN_PROGRESS','NEW') not null,
+    name           varchar(120) not null,
+    email          varchar(190) not null,
+    phone          varchar(20),
+    company        varchar(160),
+    city           varchar(80),
+    monthly_volume varchar(60),
+    message        text,
+    internal_note  text
+);
+create index ix_enquiry_status on enquiry (status);
+
+-- ---------------------------------------------------------------------- otp
+-- One-time codes for verifying a sign-up and for resetting a password.
+-- Only a BCrypt hash is stored: the plain code exists in the outbound message and nowhere
+-- else. Single-use, expiring, and refused after a few wrong attempts.
+create table otp_token (
+    id         bigint not null auto_increment primary key,
+    created_at datetime(6)  not null,
+    updated_at datetime(6)  not null,
+    user_id    bigint       not null references app_user (id) on delete cascade,
+    purpose    varchar(20)  not null,
+    code_hash  varchar(190) not null,
+    expires_at datetime(6)  not null,
+    attempts   integer      not null,
+    consumed   bit          not null,
+    sent_at    datetime(6)  not null
+);
+create index ix_otp_user on otp_token (user_id, purpose, consumed);
+create index ix_otp_expiry on otp_token (expires_at);

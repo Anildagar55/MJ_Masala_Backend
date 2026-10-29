@@ -1,0 +1,128 @@
+spring:
+  application:
+    name: mj-masala-api
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    # {vendor} resolves to postgresql or mysql, so the same build migrates either engine
+    locations: classpath:db/migration/{vendor}
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+  # Email delivery for one-time codes. Left empty on purpose: without a host,
+  # JavaMailSender is never created and the router falls back to logging the code.
+  # Set MAIL_HOST / MAIL_PORT / MAIL_USERNAME / MAIL_PASSWORD to start delivering.
+  mail:
+    host: ${MAIL_HOST:}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+  port: ${PORT:8080}
+  # Every route lives under /api, which is what the frontend's axios baseURL points at.
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+
+app:
+  jwt:
+    # MUST be overridden in every real environment — set JWT_SECRET to a random
+    # 64-char string. This default only exists so a fresh clone boots.
+    secret: ${JWT_SECRET:MjMasalaLocalJwtSecretKey2026Secure}
+    issuer: mj-masala
+    access-token-ttl: PT2H
+    refresh-token-ttl: P14D
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:4173,http://localhost:3000}
+  shipping:
+    free-above: 999
+    standard-fee: 79
+    cod-fee: 40
+  seed:
+    # V2 seeds the catalogue. Set false once the client's real data is loaded.
+    enabled: true
+  otp:
+    ttl: PT10M
+    length: 6
+    max-attempts: 5
+    resend-cooldown: PT30S
+    max-per-hour: 6
+    # Returns the code in the API response. Exists so the flow can be exercised without a
+    # provider; turn it OFF (OTP_EXPOSE_CODE=false) as soon as one is wired up, because it
+    # hands the code to whoever asked for it.
+    expose-code: ${OTP_EXPOSE_CODE:true}
+
+  # ---------------------------------------------------------------- delivery
+  # How one-time codes actually reach people. Both channels start off, so a fresh clone
+  # boots and logs the code instead of failing to reach a mail host that is not there.
+  servlet:
+    multipart:
+      # Spring's default is 1MB, which a phone photo exceeds. Kept in step with
+      # app.media.max-upload-bytes so the container rejects it before the app has to.
+      max-file-size: 8MB
+      max-request-size: 10MB
+
+  media:
+    # Uploaded product photography. Put this on a mounted volume in production —
+    # a container's own filesystem does not survive a redeploy.
+    dir: ${MEDIA_DIR:./media}
+    public-path: /api/media
+    max-upload-bytes: 8388608
+    # long edge of the resized copy that is actually served
+    max-dimension: 1600
+
+  notifications:
+    email:
+      enabled: ${MAIL_ENABLED:false}
+      from: ${MAIL_FROM:no-reply@mjmasala.in}
+      from-name: MJ MASALA
+    sms:
+      enabled: ${SMS_ENABLED:false}
+      # msg91 | fast2sms | generic
+      provider: ${SMS_PROVIDER:generic}
+      url: ${SMS_URL:}
+      auth-key: ${SMS_AUTH_KEY:}
+      sender-id: ${SMS_SENDER_ID:MJMSLA}
+      template-id: ${SMS_TEMPLATE_ID:}
+      route: ${SMS_ROUTE:q}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+
+
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+

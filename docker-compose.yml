@@ -1,0 +1,48 @@
+#    volumes:
+#      - mj-mysqldata:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-pAnil@123"]
+#      interval: 5s
+#      timeout: 5s
+#      retries: 24
+#      start_period: 40s
+
+services:
+  db:
+    image: mysql:8.0
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_DATABASE: "${DB_NAME:-mj_masala}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-Anil@123}"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mj-mysqldata:/var/lib/mysql
+    healthcheck:
+          test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-pAnil@123"]
+          interval: 5s
+          timeout: 5s
+          retries: 24
+          start_period: 40s
+
+  api:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: "jdbc:mysql://db:3306/${DB_NAME:-mj_masala}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+      DB_PASSWORD: "${DB_PASSWORD:-Anil@123}"
+      JWT_SECRET: "${JWT_SECRET}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-admin@mjmasala.in}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-admin@123}"
+      CORS_ORIGINS: "${CORS_ORIGINS:-http://localhost:5173}"
+      SPRING_PROFILES_ACTIVE: "${SPRING_PROFILES_ACTIVE:-dev}"
+    ports:
+      - "${PORT:-8080}:8080"
+
+volumes:
+  mj-mysqldata:
+

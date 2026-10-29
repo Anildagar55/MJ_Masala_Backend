@@ -1,0 +1,1153 @@
+{
+ "products": [
+  {
+   "id": 1,
+   "slug": "turmeric-powder",
+   "name": "Turmeric Powder",
+   "hindi": "हल्दी",
+   "kind": "POWDER",
+   "category": "Masala",
+   "base": 130,
+   "origin": "Erode & Sangli",
+   "blurb": "Sun-dried and stone-ground for a deep golden hue and an earthy, warm finish.",
+   "description": "Our haldi is sourced from the turmeric belt of Erode and Sangli, sun-dried and stone-ground in small batches so the natural curcumin and aroma stay intact. Deep gold in colour, warm and slightly bitter in the best way — the backbone of every Indian gravy.",
+   "ingredients": "100% Curcuma longa (turmeric). Nothing else.",
+   "usage": "Add a quarter teaspoon early in the tempering so the raw note cooks out, or whisk into warm milk with a pinch of pepper.",
+   "shelf": "12 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Earthy, warm, faintly peppery"
+    ],
+    [
+     "Colour",
+     "Deep golden yellow"
+    ],
+    [
+     "Best for",
+     "Curries, dals, golden milk"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 130,
+     "mrp": 165
+    },
+    {
+     "g": "200 g",
+     "p": 245,
+     "mrp": 305
+    },
+    {
+     "g": "500 g",
+     "p": 560,
+     "mrp": 700
+    },
+    {
+     "g": "1 kg",
+     "p": 1065,
+     "mrp": 1330
+    }
+   ],
+   "badges": [
+    "Bestseller"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 2,
+   "slug": "red-chilli-powder",
+   "name": "Red Chilli Powder",
+   "hindi": "लाल मिर्च",
+   "kind": "POWDER",
+   "category": "Masala",
+   "base": 150,
+   "origin": "Guntur & Byadgi",
+   "blurb": "Bold heat with a vivid colour, milled from hand-picked dried red chillies.",
+   "description": "Guntur and Byadgi chillies, dried in the sun and milled without any added colour. You get a natural crimson that colours the oil the moment it hits the pan, with a clean heat that builds rather than burns.",
+   "ingredients": "100% Capsicum annuum (dried red chilli). No added colour.",
+   "usage": "Bloom in hot oil for a tadka, or mix with a little water into a paste so it does not scorch.",
+   "shelf": "12 months from packing",
+   "specs": [
+    [
+     "Heat",
+     "Medium–high (Guntur blend)"
+    ],
+    [
+     "Colour",
+     "Natural deep red"
+    ],
+    [
+     "Best for",
+     "Curries, tadka, marinades"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 150,
+     "mrp": 190
+    },
+    {
+     "g": "200 g",
+     "p": 285,
+     "mrp": 355
+    },
+    {
+     "g": "500 g",
+     "p": 645,
+     "mrp": 805
+    },
+    {
+     "g": "1 kg",
+     "p": 1230,
+     "mrp": 1540
+    }
+   ],
+   "badges": [
+    "Bestseller"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 3,
+   "slug": "coriander-powder",
+   "name": "Coriander Powder",
+   "hindi": "धनिया",
+   "kind": "POWDER",
+   "category": "Masala",
+   "base": 120,
+   "origin": "Kota, Rajasthan",
+   "blurb": "Light, citrusy and gently sweet — the cooling counterweight to chilli.",
+   "description": "Round, plump dhaniya with a clean citrus note. Ground fresh, it lifts a masala from flat to fragrant. It is the quiet volume knob on heat — add more to soften a dish without losing depth.",
+   "ingredients": "100% Coriandrum sativum (coriander).",
+   "usage": "Add mid-cook with the other powders; a late addition keeps more of the citrus top note.",
+   "shelf": "12 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Citrusy, light, sweet"
+    ],
+    [
+     "Form",
+     "Fine ground"
+    ],
+    [
+     "Best for",
+     "Masala blends, curries, pickles"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 120,
+     "mrp": 150
+    },
+    {
+     "g": "200 g",
+     "p": 230,
+     "mrp": 290
+    },
+    {
+     "g": "500 g",
+     "p": 515,
+     "mrp": 645
+    },
+    {
+     "g": "1 kg",
+     "p": 985,
+     "mrp": 1230
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 4,
+   "slug": "garam-masala",
+   "name": "Garam Masala",
+   "hindi": "गरम मसाला",
+   "kind": "BLEND",
+   "category": "Masala",
+   "base": 190,
+   "origin": "Blended in-house",
+   "blurb": "Our house blend — roasted whole spices, ground together in small batches.",
+   "description": "A balanced blend of coriander, cumin, black pepper, cardamom, cinnamon, clove and bay, dry-roasted and ground together. Warming rather than hot, with a rounded finish that sits behind the dish instead of over it.",
+   "ingredients": "Coriander, cumin, black pepper, green cardamom, cinnamon, clove, bay leaf, nutmeg.",
+   "usage": "Sprinkle in the last two minutes of cooking, or finish a dish off the heat so the aromatics stay bright.",
+   "shelf": "9 months from packing",
+   "specs": [
+    [
+     "Profile",
+     "Warm, aromatic, mildly sweet"
+    ],
+    [
+     "Blend",
+     "8 whole spices, no fillers"
+    ],
+    [
+     "Best for",
+     "Finishing curries, pulao, kebab"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 190,
+     "mrp": 240
+    },
+    {
+     "g": "200 g",
+     "p": 360,
+     "mrp": 450
+    },
+    {
+     "g": "500 g",
+     "p": 815,
+     "mrp": 1020
+    },
+    {
+     "g": "1 kg",
+     "p": 1560,
+     "mrp": 1950
+    }
+   ],
+   "badges": [
+    "Bestseller",
+    "House Blend"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 5,
+   "slug": "kitchen-king-masala",
+   "name": "Kitchen King Masala",
+   "hindi": "किचन किंग",
+   "kind": "MASALA",
+   "category": "Masala",
+   "base": 175,
+   "origin": "Blended in-house",
+   "blurb": "The all-rounder for everyday sabzi — one spoon, no guesswork.",
+   "description": "Built for the nights when you want one masala and a good result. Roasted spice base with a gentle sweetness from onion and kasuri methi notes, tuned so it works across aloo, gobhi, paneer and mixed veg.",
+   "ingredients": "Coriander, red chilli, cumin, turmeric, dry mango, kasuri methi, black salt, spices.",
+   "usage": "One heaped teaspoon per four servings, added once the vegetables are half done.",
+   "shelf": "9 months from packing",
+   "specs": [
+    [
+     "Profile",
+     "Balanced, mildly tangy"
+    ],
+    [
+     "Use",
+     "One masala for any sabzi"
+    ],
+    [
+     "Best for",
+     "Dry and gravy vegetables"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 175,
+     "mrp": 220
+    },
+    {
+     "g": "200 g",
+     "p": 335,
+     "mrp": 420
+    },
+    {
+     "g": "500 g",
+     "p": 755,
+     "mrp": 945
+    },
+    {
+     "g": "1 kg",
+     "p": 1435,
+     "mrp": 1795
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 6,
+   "slug": "chana-masala",
+   "name": "Chana Masala",
+   "hindi": "छोले मसाला",
+   "kind": "MASALA",
+   "category": "Masala",
+   "base": 165,
+   "origin": "Blended in-house",
+   "blurb": "Tangy, dark and full-bodied — built for chole that taste like the street.",
+   "description": "Amchur and anardana give the sourness that makes good chole, backed by roasted cumin and a slow-building chilli heat. Dark in colour because the spices are roasted, not because anything is added.",
+   "ingredients": "Coriander, cumin, red chilli, dry mango, pomegranate seed, black salt, clove, bay leaf.",
+   "usage": "Add after the onion-tomato base has cooked down, then simmer the chickpeas in it for at least ten minutes.",
+   "shelf": "9 months from packing",
+   "specs": [
+    [
+     "Profile",
+     "Tangy, roasted, medium heat"
+    ],
+    [
+     "Blend",
+     "Amchur + anardana base"
+    ],
+    [
+     "Best for",
+     "Chole, chana chaat"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 165,
+     "mrp": 205
+    },
+    {
+     "g": "200 g",
+     "p": 315,
+     "mrp": 395
+    },
+    {
+     "g": "500 g",
+     "p": 710,
+     "mrp": 890
+    },
+    {
+     "g": "1 kg",
+     "p": 1355,
+     "mrp": 1695
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 7,
+   "slug": "sambar-masala",
+   "name": "Sambar Masala",
+   "hindi": "सांभर मसाला",
+   "kind": "MASALA",
+   "category": "Masala",
+   "base": 170,
+   "origin": "Blended in-house",
+   "blurb": "South-Indian style, with roasted dal and curry leaf in the blend.",
+   "description": "Roasted chana dal and toor dal give the body that makes a sambar taste finished. Curry leaf, fenugreek and a hint of jaggery round off the heat, so it works with both vegetables and drumstick.",
+   "ingredients": "Coriander, red chilli, roasted chana dal, toor dal, fenugreek, curry leaf, turmeric, asafoetida.",
+   "usage": "Stir into the cooked dal-vegetable mix and simmer five minutes before the final tempering.",
+   "shelf": "9 months from packing",
+   "specs": [
+    [
+     "Profile",
+     "Roasted, tangy, aromatic"
+    ],
+    [
+     "Blend",
+     "Dal-based for body"
+    ],
+    [
+     "Best for",
+     "Sambar, rasam, kootu"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 170,
+     "mrp": 215
+    },
+    {
+     "g": "200 g",
+     "p": 325,
+     "mrp": 405
+    },
+    {
+     "g": "500 g",
+     "p": 730,
+     "mrp": 915
+    },
+    {
+     "g": "1 kg",
+     "p": 1395,
+     "mrp": 1745
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 8,
+   "slug": "pav-bhaji-masala",
+   "name": "Pav Bhaji Masala",
+   "hindi": "पाव भाजी",
+   "kind": "MASALA",
+   "category": "Masala",
+   "base": 165,
+   "origin": "Blended in-house",
+   "blurb": "Smoky, tangy and a little sharp — the Mumbai street-stall profile.",
+   "description": "Fennel and black salt carry the top note, with amchur for the tang and a slow chilli warmth underneath. Built to stand up to butter and mashed vegetables without disappearing.",
+   "ingredients": "Coriander, red chilli, fennel, cumin, dry mango, black salt, cinnamon, clove, black pepper.",
+   "usage": "Add to the mashed vegetables with a generous knob of butter and cook until the oil separates.",
+   "shelf": "9 months from packing",
+   "specs": [
+    [
+     "Profile",
+     "Smoky, tangy, sharp"
+    ],
+    [
+     "Blend",
+     "Fennel + black salt forward"
+    ],
+    [
+     "Best for",
+     "Pav bhaji, misal, tawa dishes"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 165,
+     "mrp": 205
+    },
+    {
+     "g": "200 g",
+     "p": 315,
+     "mrp": 395
+    },
+    {
+     "g": "500 g",
+     "p": 710,
+     "mrp": 890
+    },
+    {
+     "g": "1 kg",
+     "p": 1355,
+     "mrp": 1695
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 9,
+   "slug": "jeera-whole",
+   "name": "Jeera Whole",
+   "hindi": "जीरा",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 170,
+   "origin": "Unjha, Gujarat",
+   "blurb": "Nutty, aromatic and deeply warming — the quiet backbone of Indian cooking.",
+   "description": "Cleaned and graded jeera with a high volatile-oil content. Toast it in ghee and the whole kitchen knows. We pack it whole because that is how it keeps its aroma longest.",
+   "ingredients": "100% Cuminum cyminum (cumin seed).",
+   "usage": "Dry-roast or bloom in hot ghee until it crackles, then proceed. Ground fresh as needed.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Nutty, warm, sweet"
+    ],
+    [
+     "Form",
+     "Whole seeds, hand-cleaned"
+    ],
+    [
+     "Best for",
+     "Tadka, biryani, raita"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 170,
+     "mrp": 215
+    },
+    {
+     "g": "200 g",
+     "p": 325,
+     "mrp": 405
+    },
+    {
+     "g": "500 g",
+     "p": 730,
+     "mrp": 915
+    },
+    {
+     "g": "1 kg",
+     "p": 1395,
+     "mrp": 1745
+    }
+   ],
+   "badges": [
+    "Bestseller"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 10,
+   "slug": "black-pepper",
+   "name": "Black Pepper",
+   "hindi": "काली मिर्च",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 240,
+   "origin": "Malabar Coast, Kerala",
+   "blurb": "Tellicherry-grade peppercorns with a sharp, complex bite.",
+   "description": "Large Tellicherry-grade peppercorns from the Malabar coast, vine-ripened for a fuller flavour and higher piperine content. Sharper and more layered than standard pepper.",
+   "ingredients": "100% Piper nigrum (black peppercorn).",
+   "usage": "Crack fresh over a finished dish. For curries, add whole corns early so they soften into the gravy.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Heat",
+     "Sharp, lingering, aromatic"
+    ],
+    [
+     "Grade",
+     "Tellicherry, whole corns"
+    ],
+    [
+     "Best for",
+     "Soups, marinades, finishing"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 240,
+     "mrp": 300
+    },
+    {
+     "g": "200 g",
+     "p": 455,
+     "mrp": 570
+    },
+    {
+     "g": "500 g",
+     "p": 1030,
+     "mrp": 1290
+    },
+    {
+     "g": "1 kg",
+     "p": 1970,
+     "mrp": 2465
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 11,
+   "slug": "green-cardamom",
+   "name": "Green Cardamom",
+   "hindi": "इलायची",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 520,
+   "origin": "Idukki, Kerala",
+   "blurb": "Plump, aromatic pods — sweet, floral and unmistakable.",
+   "description": "Hand-sorted 8 mm green cardamom pods with a bright, almost menthol sweetness. A little goes a long way, which is why we sell it in smaller packs.",
+   "ingredients": "100% Elettaria cardamomum (green cardamom).",
+   "usage": "Crush a pod or two into chai or kheer. For biryani, add whole pods to the rice before the lid goes on.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Floral, sweet, cooling"
+    ],
+    [
+     "Size",
+     "8 mm bold pods"
+    ],
+    [
+     "Best for",
+     "Chai, kheer, biryani"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 520,
+     "mrp": 650
+    },
+    {
+     "g": "200 g",
+     "p": 990,
+     "mrp": 1240
+    },
+    {
+     "g": "500 g",
+     "p": 2235,
+     "mrp": 2795
+    },
+    {
+     "g": "1 kg",
+     "p": 4265,
+     "mrp": 5330
+    }
+   ],
+   "badges": [
+    "Premium"
+   ],
+   "bestseller": false
+  },
+  {
+   "id": 12,
+   "slug": "cloves",
+   "name": "Cloves",
+   "hindi": "लौंग",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 210,
+   "origin": "Nilgiris",
+   "blurb": "Fat, oil-rich buds with a deep, numbing warmth.",
+   "description": "Whole cloves with the head still intact — the sign of a bud picked at the right time. Strong enough that one or two is usually all a dish needs.",
+   "ingredients": "100% Syzygium aromaticum (clove).",
+   "usage": "Add whole to rice, gravies and chai. Pull them out before serving.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Deep, sweet, numbing"
+    ],
+    [
+     "Form",
+     "Whole buds, heads intact"
+    ],
+    [
+     "Best for",
+     "Pulao, garam masala, chai"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 210,
+     "mrp": 265
+    },
+    {
+     "g": "200 g",
+     "p": 400,
+     "mrp": 500
+    },
+    {
+     "g": "500 g",
+     "p": 905,
+     "mrp": 1130
+    },
+    {
+     "g": "1 kg",
+     "p": 1720,
+     "mrp": 2150
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 13,
+   "slug": "cinnamon",
+   "name": "Cinnamon Sticks",
+   "hindi": "दालचीनी",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 195,
+   "origin": "Western Ghats",
+   "blurb": "Warm, sweet bark — quills that snap clean and smell of the forest.",
+   "description": "Thin, tightly rolled quills with a sweet woody warmth. Break a piece and the aroma should hit immediately — that is the volatile oil you are paying for.",
+   "ingredients": "100% Cinnamomum verum (true cinnamon).",
+   "usage": "Snap into rice, biryani and slow-cooked gravies. Also good in a winter chai.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Sweet, woody, warm"
+    ],
+    [
+     "Form",
+     "Whole quills"
+    ],
+    [
+     "Best for",
+     "Biryani, garam masala, chai"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 195,
+     "mrp": 245
+    },
+    {
+     "g": "200 g",
+     "p": 370,
+     "mrp": 465
+    },
+    {
+     "g": "500 g",
+     "p": 840,
+     "mrp": 1050
+    },
+    {
+     "g": "1 kg",
+     "p": 1600,
+     "mrp": 2000
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 14,
+   "slug": "star-anise",
+   "name": "Star Anise",
+   "hindi": "चक्रफूल",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 265,
+   "origin": "Northeast India",
+   "blurb": "Whole eight-point stars with a deep liquorice warmth.",
+   "description": "Intact, well-formed stars with a strong anethole note. Essential in Chettinad and Bengali cooking, and a natural pairing with cinnamon and clove in our garam masala.",
+   "ingredients": "100% Illicium verum (star anise).",
+   "usage": "One star is plenty for a family-sized pot. Add early so it has time to infuse.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Liquorice, sweet, warming"
+    ],
+    [
+     "Form",
+     "Whole eight-point stars"
+    ],
+    [
+     "Best for",
+     "Chettinad, biryani, broths"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 265,
+     "mrp": 330
+    },
+    {
+     "g": "200 g",
+     "p": 505,
+     "mrp": 630
+    },
+    {
+     "g": "500 g",
+     "p": 1140,
+     "mrp": 1425
+    },
+    {
+     "g": "1 kg",
+     "p": 2175,
+     "mrp": 2720
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 15,
+   "slug": "bay-leaf",
+   "name": "Bay Leaf",
+   "hindi": "तेज पत्ता",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 110,
+   "origin": "Uttarakhand",
+   "blurb": "Whole dried leaves with a clean, herbal bite.",
+   "description": "Whole leaves, not crushed fragments. They hold their shape through a long cook and release a soft, tea-like aroma that rounds off a gravy.",
+   "ingredients": "100% Cinnamomum tamala (Indian bay leaf).",
+   "usage": "Drop into hot oil at the start of a curry, or add to rice before cooking.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Aroma",
+     "Herbal, warm, subtle"
+    ],
+    [
+     "Form",
+     "Whole leaves"
+    ],
+    [
+     "Best for",
+     "Curries, pulao, slow cooks"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 110,
+     "mrp": 140
+    },
+    {
+     "g": "200 g",
+     "p": 210,
+     "mrp": 265
+    },
+    {
+     "g": "500 g",
+     "p": 475,
+     "mrp": 595
+    },
+    {
+     "g": "1 kg",
+     "p": 900,
+     "mrp": 1125
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 16,
+   "slug": "mustard-seeds",
+   "name": "Mustard Seeds",
+   "hindi": "राई",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 120,
+   "origin": "Rajasthan",
+   "blurb": "Small, dark and sharp — the crackle at the start of a South-Indian tadka.",
+   "description": "Tiny black mustard seeds that pop the moment they hit hot oil. The sound is the cue — once they crackle, the oil is seasoned and ready.",
+   "ingredients": "100% Brassica nigra (black mustard seed).",
+   "usage": "Heat oil, add seeds, wait for the crackle, then add curry leaf and the rest.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Flavour",
+     "Sharp, pungent when crushed"
+    ],
+    [
+     "Form",
+     "Whole black seeds"
+    ],
+    [
+     "Best for",
+     "Tadka, pickles, curries"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 120,
+     "mrp": 150
+    },
+    {
+     "g": "200 g",
+     "p": 230,
+     "mrp": 290
+    },
+    {
+     "g": "500 g",
+     "p": 515,
+     "mrp": 645
+    },
+    {
+     "g": "1 kg",
+     "p": 985,
+     "mrp": 1230
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  },
+  {
+   "id": 17,
+   "slug": "fenugreek-seeds",
+   "name": "Fenugreek Seeds",
+   "hindi": "मेथी दाना",
+   "kind": "WHOLE",
+   "category": "Whole",
+   "base": 140,
+   "origin": "Madhya Pradesh",
+   "blurb": "Bitter, maple-sweet seeds — a little goes a very long way.",
+   "description": "Hard, angular methi dana with the characteristic bitter-sweet note. Roasted and ground, it is what gives a sambar or pickle its backbone.",
+   "ingredients": "100% Trigonella foenum-graecum (fenugreek seed).",
+   "usage": "Roast lightly before grinding — raw seeds are harsh. Use sparingly.",
+   "shelf": "18 months from packing",
+   "specs": [
+    [
+     "Flavour",
+     "Bitter, maple-sweet"
+    ],
+    [
+     "Form",
+     "Whole seeds"
+    ],
+    [
+     "Best for",
+     "Sambar, pickles, methi dishes"
+    ]
+   ],
+   "packs": [
+    {
+     "g": "100 g",
+     "p": 140,
+     "mrp": 175
+    },
+    {
+     "g": "200 g",
+     "p": 265,
+     "mrp": 330
+    },
+    {
+     "g": "500 g",
+     "p": 600,
+     "mrp": 750
+    },
+    {
+     "g": "1 kg",
+     "p": 1150,
+     "mrp": 1440
+    }
+   ],
+   "badges": [],
+   "bestseller": false
+  }
+ ],
+ "combos": [
+  {
+   "id": 101,
+   "slug": "complete-kitchen-combo",
+   "name": "Complete Kitchen Combo",
+   "hindi": "किचन कॉम्बो",
+   "price": 899,
+   "mrp": 1199,
+   "blurb": "Six spices that between them cover almost every Indian kitchen.",
+   "description": "The full starter shelf in one box. Six 100 g jars — everything you reach for on a normal weekday, nothing you will not finish.",
+   "specs": [
+    [
+     "Jars",
+     "6 × 100 g"
+    ],
+    [
+     "Covers",
+     "Everyday cooking for 1–2 months"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars, gift-boxed"
+    ]
+   ],
+   "contents": [
+    "Turmeric Powder 100 g",
+    "Red Chilli Powder 100 g",
+    "Coriander Powder 100 g",
+    "Garam Masala 100 g",
+    "Jeera Whole 100 g",
+    "Black Pepper 100 g"
+   ],
+   "badges": [
+    "Most Popular"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 102,
+   "slug": "everyday-masala-combo",
+   "name": "Everyday Masala Combo",
+   "hindi": "रोज़ का मसाला",
+   "price": 799,
+   "mrp": 1050,
+   "blurb": "Five blends for the dishes you actually cook on repeat.",
+   "description": "If you cook a rotation of five or six dishes, this is the shortcut. One spoon of the right blend instead of measuring six powders every night.",
+   "specs": [
+    [
+     "Jars",
+     "5 × 100 g"
+    ],
+    [
+     "Covers",
+     "Sabzi, chole, sambar, pav bhaji"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars"
+    ]
+   ],
+   "contents": [
+    "Garam Masala 100 g",
+    "Kitchen King Masala 100 g",
+    "Chana Masala 100 g",
+    "Sambar Masala 100 g",
+    "Pav Bhaji Masala 100 g"
+   ],
+   "badges": [
+    "Value"
+   ]
+  },
+  {
+   "id": 103,
+   "slug": "golden-trio",
+   "name": "Golden Trio",
+   "hindi": "गोल्डन ट्रायो",
+   "price": 399,
+   "mrp": 520,
+   "blurb": "Haldi, mirchi, dhaniya — the three that start almost everything.",
+   "description": "The base of nearly every Indian gravy, in one small box. The cheapest way to try MJ MASALA if you have never ordered before.",
+   "specs": [
+    [
+     "Jars",
+     "3 × 100 g"
+    ],
+    [
+     "Covers",
+     "The base of any curry"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars"
+    ]
+   ],
+   "contents": [
+    "Turmeric Powder 100 g",
+    "Red Chilli Powder 100 g",
+    "Coriander Powder 100 g"
+   ],
+   "badges": [
+    "Bestseller"
+   ],
+   "bestseller": true
+  },
+  {
+   "id": 104,
+   "slug": "whole-spice-starter",
+   "name": "Whole Spice Starter",
+   "hindi": "साबुत मसाले",
+   "price": 649,
+   "mrp": 860,
+   "blurb": "Four whole spices to grind your own blends at home.",
+   "description": "For anyone who has decided to grind their own garam masala. Whole spices keep their oils far longer than powder — buy once, grind as you go.",
+   "specs": [
+    [
+     "Jars",
+     "4 (mixed weights)"
+    ],
+    [
+     "Covers",
+     "Home garam masala, biryani, chai"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars"
+    ]
+   ],
+   "contents": [
+    "Green Cardamom 50 g",
+    "Cloves 50 g",
+    "Cinnamon Sticks 100 g",
+    "Star Anise 50 g"
+   ],
+   "badges": [
+    "Value"
+   ]
+  },
+  {
+   "id": 105,
+   "slug": "daily-cooking-combo",
+   "name": "Daily Cooking Combo",
+   "hindi": "डेली कुकिंग",
+   "price": 549,
+   "mrp": 730,
+   "blurb": "The four jars most kitchens run out of first.",
+   "description": "A slightly bigger take on the Golden Trio, with garam masala added because that is the one everybody forgets to reorder.",
+   "specs": [
+    [
+     "Jars",
+     "4 × 100 g"
+    ],
+    [
+     "Covers",
+     "Everyday cooking for 3–4 weeks"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars"
+    ]
+   ],
+   "contents": [
+    "Turmeric Powder 100 g",
+    "Red Chilli Powder 100 g",
+    "Coriander Powder 100 g",
+    "Garam Masala 100 g"
+   ],
+   "badges": [
+    "Value"
+   ]
+  },
+  {
+   "id": 106,
+   "slug": "haldi-mirchi-duo",
+   "name": "Haldi + Mirchi Duo",
+   "hindi": "हल्दी मिर्च जोड़ी",
+   "price": 279,
+   "mrp": 350,
+   "blurb": "The two jars you reach for more than any other.",
+   "description": "The smallest way to start. Two jars, both of which you will finish — which is more than can be said for most sampler packs.",
+   "specs": [
+    [
+     "Jars",
+     "2 × 100 g"
+    ],
+    [
+     "Covers",
+     "The first two spoons of any curry"
+    ],
+    [
+     "Packing",
+     "Sealed glass jars"
+    ]
+   ],
+   "contents": [
+    "Turmeric Powder 100 g",
+    "Red Chilli Powder 100 g"
+   ],
+   "badges": [
+    "Starter"
+   ]
+  },
+  {
+   "id": 107,
+   "slug": "signature-collection",
+   "name": "Signature Collection",
+   "hindi": "सिग्नेचर कलेक्शन",
+   "price": 1149,
+   "mrp": 1520,
+   "blurb": "Five signature jars in a gift box — our most-complimented pack.",
+   "description": "The one people send as a gift. Five jars in a printed box with a card slot, packed so nothing shifts in transit.",
+   "specs": [
+    [
+     "Jars",
+     "5 × 100 g"
+    ],
+    [
+     "Covers",
+     "A full starter shelf"
+    ],
+    [
+     "Packing",
+     "Printed gift box with card slot"
+    ]
+   ],
+   "contents": [
+    "Turmeric Powder 100 g",
+    "Red Chilli Powder 100 g",
+    "Coriander Powder 100 g",
+    "Garam Masala 100 g",
+    "Jeera Whole 100 g"
+   ],
+   "badges": [
+    "Premium",
+    "Gift Ready"
+   ]
+  }
+ ]
+}

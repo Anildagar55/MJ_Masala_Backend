@@ -1,0 +1,32 @@
+# Tests run on in-memory H2 in PostgreSQL compatibility mode. Flyway is off and
+# Hibernate builds the schema from the entities, so a mapping mistake surfaces
+# here rather than in production.
+spring:
+  datasource:
+    url: jdbc:h2:mem:mjtest;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: test-secret-test-secret-test-secret-test-secret-test-secret-1234
+  # the seeder runs in tests on purpose: the API is asserted against the same catalogue
+  # JSON the frontend ships, so the two cannot drift apart unnoticed
+  seed:
+    enabled: true
+  shipping:
+    free-above: 999
+    standard-fee: 79
+    cod-fee: 40
+
+logging:
+  level:
+    root: WARN
+    in.mjmasala: INFO

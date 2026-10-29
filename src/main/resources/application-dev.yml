@@ -1,0 +1,30 @@
+# ============================================================================
+#  MySQL — the deployment target
+# ============================================================================
+#  Switching database vendors is a datasource swap, not a code change. Nothing in
+#  Java, the entities or the migrations refers to a vendor: Flyway reads
+#  spring.flyway.locations=classpath:db/migration/{vendor} and picks the matching
+#  folder from the driver on the classpath, and both drivers ship in the pom.
+#
+#  To move to PostgreSQL, replace this file and docker-compose.yml with the
+#  versions in the postgresql/ folder of the db-switch bundle.
+# ============================================================================
+spring:
+  datasource:
+    # createDatabaseIfNotExist lets a fresh container come up without a manual
+    # CREATE DATABASE step; drop it if your user cannot create schemas.
+    url: ${DB_URL:jdbc:mysql://localhost:3306/mj_masala?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&createDatabaseIfNotExist=true}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:Anil@123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      pool-name: mj-pool
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+logging:
+  level:
+    in.mjmasala: DEBUG
+    org.hibernate.SQL: DEBUG
