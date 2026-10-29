@@ -2,27 +2,25 @@ name: MJ Masala Backend CI
 
 on:
 push:
-branches:
-- master
+branches: [master]
 pull_request:
-branches:
-- master
+branches: [master]
 
 jobs:
 build:
 runs-on: ubuntu-latest
 
+
 steps:
-  - name: Checkout backend code
+  - name: Checkout code
     uses: actions/checkout@v4
 
-  - name: Set up JDK 17
+  - name: Set up Java 17
     uses: actions/setup-java@v4
     with:
-      java-version: "17"
-      distribution: "temurin"
+      java-version: '17'
+      distribution: 'temurin'
       cache: maven
 
-  - name: Build Spring Boot application
-    run: mvn -B verify --file pom.xml
-```
+  - n
+
