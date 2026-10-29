@@ -2,14 +2,15 @@ name: MJ Masala Backend CI
 
 on:
 push:
-branches: ["master"]
+branches:
+- master
 pull_request:
-branches: ["master"]
+branches:
+- master
 
 jobs:
 build:
 runs-on: ubuntu-latest
-
 
 steps:
   - name: Checkout backend code
