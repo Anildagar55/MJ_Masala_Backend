@@ -2,15 +2,15 @@ name: MJ Masala Backend CI
 
 on:
 push:
-branches: ["main"]
+branches: ["master"]
 pull_request:
-branches: ["main"]
+branches: ["master"]
 
 jobs:
 build:
 runs-on: ubuntu-latest
 
-```
+
 steps:
   - name: Checkout backend code
     uses: actions/checkout@v4
